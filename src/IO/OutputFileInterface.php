@@ -9,6 +9,7 @@ namespace IO;
  */
 interface OutputFileInterface
 {
-    public function getPath(): string;
+    public function getData(): array;
+    public function getFileName(): string;
     public function output(): void;
 }
