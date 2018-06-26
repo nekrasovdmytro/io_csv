@@ -63,8 +63,8 @@ class CsvInputFile implements InputFileInterface, DetailFileInterface
      */
     public function getInput($delimiter = ','): \Generator
     {
-        if (!$this->file->isWritable()) {
-            return new \RuntimeException($this->file->getFilename() . ' is not writable');
+        if (!$this->file->isReadable()) {
+            return new \RuntimeException($this->file->getFilename() . ' is not readable');
         }
 
         if (!$this->file->isFile()) {
